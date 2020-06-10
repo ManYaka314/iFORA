@@ -1,0 +1,64 @@
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <title>iFORA</title>
+
+	</head>
+
+	<body>	
+		<div class="container border border-primary mt-4">
+			<h1>Просмотр записей</h1>
+			<table id="feedbacks" class="table table-striped">
+				<div class="table responsive">
+					<thead>
+						<tr>
+						<th>Id</th>
+						<th>ФИО</th>
+						<th>Email</th>
+						<th>Дата</th>
+						<th>Время</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php
+						while ($curnm = mysqli_fetch_array($sql_query)) {
+							echo '<tr>
+									<td scope="row">' . $curnm['id'] . '</td>
+									<td>' . $curnm['name'] . '</td>
+									<td>' . $curnm['email'] . '</td>
+									<td> ' . $curnm['date'] . '</td>
+									<td> ' . $curnm['time'] . '</td>
+								</tr>';
+						}
+					?>
+					</tbody>
+				</div>
+			</table>
+			<div class="container mb-4">
+				<span class="container">
+					<a href="uploads/dbupload.php" class="btn btn-success">Выгрузка *.xlsx</a>
+				</span>
+				<span class="container">
+					<a href="uploads/dbuploadcsv.php" class="btn btn-success">Выгрузка *.csv</a>
+				</span>
+			</div>
+		</div>
+		<?php echo $pagination; ?>
+		<div class="container mt-4">
+			<a href="index.html" class="btn btn-secondary">Обратная связь</a>
+		</div>
+	</body>
+</html>

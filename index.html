@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iFORA</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container border border-primary mt-4">
+      <h1>Запись на показ</h1>
+      <form id="feedForm">
+        Как Вас зовут?
+        <input
+          type="name"
+          name="name"
+          id="name"
+          placeholder="ФИО"
+          class="form-control"
+        /><br />
+        Ваш электронный адрес
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          class="form-control"
+          required
+        /><br />
+        Желаемые дата и время показа
+        <input type="date" name="date" id="date" class="form-control" />
+        <input
+          type="time"
+          name="time"
+          id="time"
+          class="form-control mt-1"
+        /><br />
+        <button type="button" id="feed" class="btn btn-success">
+          Отправить
+        </button>
+      </form>
+      <div id="error" class="alert alert-light"></div>
+    </div>
+    <div class="container mt-4">
+      <a href="index.php" class="btn btn-secondary">Для администратора</a>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/feedback.js"></script>
+  </body>
+</html>
